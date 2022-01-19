@@ -11,7 +11,6 @@ const CoinDetails = () => {
     const getData =async()=>{
         var coinid = sessionStorage.getItem("coinid")
         const res = await axios.get(`https://api.coingecko.com/api/v3/${coinid}`)
-        console.log(res.data.market_data.market_cap.eur)
         setCoindata(res.data)
         setMarketCap(res.data.market_data.market_cap.eur)
         setDescription(res.data.description.en)

@@ -2,12 +2,9 @@ import React from 'react';
 import axios from 'axios'
 
 const CoinRow = ({coin, index}) => {
-    console.log(coin, index)
 
     const handlechange =async(e)=>{
-        console.log(e)
         const coin_Id = await axios.get(`https://api.coingecko.com/api/v3/${e}`)
-        console.log(coin_Id.data)
         sessionStorage.setItem("coinid", e)
         sessionStorage.getItem("coinid")
         window.location.replace("/coins/CoinDetails")
